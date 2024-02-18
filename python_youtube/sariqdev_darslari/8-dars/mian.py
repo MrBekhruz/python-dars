@@ -32,7 +32,35 @@ toq_sonlar = list(range(1,10,2))
 max_qiymat = max(toq_sonlar)
 # min qiymat uchun
 min_qiymat = min(toq_sonlar)
+# sum - yigindini hisoblash
+sum_qiymat = sum(toq_sonlar)
+print(sum_qiymat)
 print(min_qiymat)
 print(max_qiymat)
-print("max qiymat: ", max_qiymat , " " "min qiymat: " , min_qiymat)
+print("max qiymat: ", max_qiymat , " " "min qiymat: " , min_qiymat, " " 'sum_qiymat: ' ,sum_qiymat)
 
+# RUYXATNI KESISH
+cars = ['audi','bmw','chevrolet','kaptiva', 'genral']
+print(cars[0:5])
+print(cars[4:5])
+print(cars[1:])
+print(cars[:5])
+# nusxa olish uchun [:]
+
+my_cars = cars[:]
+my_cars.append('GENTRA')
+print(my_cars)
+
+# TUPLE - UZGARMAS RUYXAT
+#  tupleda hech qanday qiymatni uzgartirib bulmaydi, unga hech qanday append metodi ishlamaydi chunki uzgarmas
+cars = ('audi','bmw','chevrolet','kaptiva', 'genral')
+# # ERROR
+# cars[2] = 'teddy'
+# print(cars)
+  
+# uzgartirish kiritish uchhun tupleni -> listga aylantiramiz,keyin bemalolo apeend qilishimiz mumkin
+cars = list(cars)
+print(type(cars))
+# listdan -> tuole utish uchun tuple funksiyasi dan foydalanamiz
+cars = tuple(cars)
+print(type(cars))
