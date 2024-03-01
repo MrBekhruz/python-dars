@@ -3,14 +3,14 @@ y = 2024
 m = 1
 print(calendar.month(y,m))
 
-# a = 'salom dustim'
-# print(a)
+a = 'salom dustim'
+print(a)
 
     
-# ruyxat = []
-# regitratsiya = input('jobingizni yozing')
-# ruyxat.append(regitratsiya)
-# print(ruyxat)
+ruyxat = []
+regitratsiya = input('jobingizni yozing')
+ruyxat.append(regitratsiya)
+print(ruyxat)
 
 class Room:
     def __init__(self,number,status):

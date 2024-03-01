@@ -12,17 +12,17 @@
 #     print(i + 1) # 1 dan boshlab sanash uchun i ga bir qushdik
     
 
-# for i in 'bro code':
-#     print(i)
+for i in 'bro code':
+    print(i)
 
 
 
-# import time
+import time
 
-# for i in range(10,0,-1): # buni vazifasi 10 dan 1 gacha sanash 0 hisobga olinmaydi bir bir ayirib
-#     print(i)
-#     time.sleep(3) # bu yerda sukund ifosalandi bir secunda chiqishini aytdik
-# print("HAppy new year")
+for i in range(10,0,-1): # buni vazifasi 10 dan 1 gacha sanash 0 hisobga olinmaydi bir bir ayirib
+    print(i)
+    time.sleep(3) # bu yerda sukund ifosalandi bir secunda chiqishini aytdik
+print("HAppy new year")
 
 
 # nested loops = the inner loop will finish all of it's interations before
