@@ -2,16 +2,24 @@
             # as long as it's condition remains true
 
 
-# name = ''
 
+while 1==1: # === while true
+    print("hello world")
+
+
+name = ""
 while len(name) == 0:
     name = input('enter your name ')
 
 print("Hello " + name)
 
-name = None
 
+name = None
 while not name:
     name = input('enter your name ')
 
 print("Hello " + name)
+
+
+for i in range(50,100+2,2):
+    print(i)

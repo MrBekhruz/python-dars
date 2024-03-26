@@ -1,6 +1,6 @@
 name = 'Bro'
 isdigitcha = '123456'
-# print(len(name)) # len ni vazifsasi sanab berish
+print(len(name)) # len ni vazifsasi sanab berish
 print(name.find("B")) # find orqali siz berayotgan harfingizni index bilishingiz mumkin agrda katta harf yuq bulsayu siz uni katta harfda izla desangiz indexni manfiy qiymatdda olib chiqarib beradi
 print(name.find("b")) #berilgan harfini index buyicha izlash
 print(name.capitalize()) # capitalizeni vazifasi shundan iboratki berilgan uzgaruvchidagi kichkina harflarni faqat birinchisini katta harfda yozish ( ) qavs ichida hech narsa yozillmaydi

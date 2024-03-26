@@ -63,3 +63,7 @@ while True:
 #         print('4')
 #         time.sleep(1)
     
+def find(n):
+    return f"quyidagicha {n}"
+    sonlar [1,2,3,4,5,6,7,8,99,100]
+    katta = max

@@ -26,3 +26,16 @@ print(website1)
 slice = slice(0,19)
 print(website1[slice])
 print(website2[slice])
+
+name = "BexruzBaxtiyorov"
+first_name = name[:7]
+last_name = name[7:]
+umumiy = first_name + last_name
+print(umumiy)
+funky_name = name[::2]
+print(funky_name)
+def websitecha():
+    website = 'http://google.com'
+    slicecha = slice(0,19)
+    print(website[slicecha])
+websitecha()
