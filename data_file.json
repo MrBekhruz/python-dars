@@ -1,0 +1,18 @@
+[
+       {
+              "pasport": "asd123",
+              "2": {
+                     "ism": "behruz",
+                     "familiya": "baxtiyorov",
+                     "telefon_raqam": "465-465"
+              }
+       },
+       {
+              "pasport": "asd123",
+              "5": {
+                     "ism": "behruz",
+                     "familiya": "baxtiyorov",
+                     "telefon_raqam": "465-456"
+              }
+       }
+]
