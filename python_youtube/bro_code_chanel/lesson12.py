@@ -34,14 +34,14 @@ if 21 in touple:
     print(f"numbers is here {21}")
 
 
-
+import time
 # ermakka dasturcha navigation karusel
 # import time
-# while True:
-#     for x in food:
-#         for i in range(2):
-#             time.sleep(1)
-#         print(x)
+while True:
+    for x in food:
+        for i in range(2):
+            time.sleep(1)
+        print(x)
 
 
 

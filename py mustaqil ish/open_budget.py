@@ -10,7 +10,7 @@ def open_budget():
         print("----------Open budget dasturiga xush kelibsiz----------")
         ism = input("Assalom alaykum ismingizni kiriting: ").lower()
         familiya = input("Navbat endi familyaga, iltimos familiyangizni kiriting: ").lower()
-        telefon_raqam = input("Iltimos telefon raqamingizni kirirting \nNAMUNA -> (+998-99-414-40-22):")
+        telefon_raqam = input("Iltimos telefon raqamingizni kirirting \nNAMUNA -> (+998)99-414-40-22: ")
         pasport = input('pasportseriya raqami: ')
         id = random.choice('123456879')
         for i in telefon_raqam:
@@ -38,6 +38,7 @@ def open_budget():
 
             if ovoz in len(qishloq):
                 print("Saqlandi ")
+                data.update({'ovoz':ovoz})
                 json_file_name = 'data_file.json'
                 with open(json_file_name,'w') as json_f:
                     json.dump(malumot,json_f,indent=7)
