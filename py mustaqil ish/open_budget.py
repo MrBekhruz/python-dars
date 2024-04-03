@@ -1,61 +1,49 @@
-# open budget dasturi tuziladi foydalanuvchi ism fammiliyasi vva telefon raqami olinadi 
-# malumot jsonda saqlanadi , agar malumot jsonda bulsa unga siz avval ovoz bergansiz desin ,yangi foydalanuvchi bulsa
-# biror kuchaga ovoz berib quyilsin
 import json
 import random
-class Open:
-    def __init__(self,ism,familiya,telefon_raqam,pasport,idcha,data):
-        self.ism = ism
-        self.familiya = familiya
-        self.telefon_raqam = telefon_raqam
-        self.pasport = pasport
-        self.idcha = idcha
-        self.data = data
 
+class OpenBudget:
+    def __init__(self):
+        self.data = {}
+    
+    def register(self):
+        print("----------Open budget dasturiga xush kelibsiz----------")
+        ism = input("Assalom alaykum ismingizni kiriting: ").lower()
+        familiya = input("Navbat endi familyaga, iltimos familiyangizni kiriting: ").lower()
+        telefon_raqam = input("Iltimos telefon raqamingizni kirirting \nNAMUNA -> (+998)99-414-40-22: ")
+        pasport = input('pasportseriya raqami: ')
+        idcha = random.randint(100000, 999999)
+        self.data[pasport] = {
+            'ism': ism,
+            'familiya': familiya,
+            'telefon_raqam': telefon_raqam,
+            'idcha': idcha
+        }
 
-    while True:
-        def register(self):
-            print('----------------------')
-            print("----------Open budget dasturiga xush kelibsiz----------")
-            self.ism = input("Assalom alaykum ismingizni kiriting: ").lower()
-            self.familiya = input("Navbat endi familyaga, iltimos familiyangizni kiriting: ").lower()
-            self.telefon_raqam = input("Iltimos telefon raqamingizni kirirting \nNAMUNA -> (+998)99-414-40-22: ")
-            self.pasport = input('pasportseriya raqami: ')
-            self.idcha = random.choice('123456879')
-            for i in self.telefon_raqam:
-                if i == '-':
-                    continue
-                print(i, end="")
-        def append_data(self):
-            malumot = []
-            self.data = {
-                'pasport':self.pasport,
+    def main(self):
+        with open('data_file.json', 'r') as json_file:
+            try:
+                existing_data = json.load(json_file)
+            except json.JSONDecodeError:
+                existing_data = {}
+        
+        self.data.update(existing_data)
 
-                self.idcha :{
-                'ism':self.ism,
-                'familiya':self.familiya,
-                'telefon_raqam':self.telefon_raqam,           
-                }
-            }
-            malumot.append(self.data)
-        # malumot = tuple(malumot)
-        def main(self):
-            if self.data['pasport'] == self.pasport :
-                print('afsuski ruyhatdan utgansiz')
-                break
+        pasport = input('pasportseriya raqamingizni kiriting: ')
+        if pasport in self.data:
+            print('Afsuski, ruyhatdan utgansiz.')
+        else:
+            print('--Qaysi qishloqga ovoz berasiz?--')
+            qishloq = ['Mitan', 'Arabsaroy', 'Qalqon Ota', 'Vomitan', 'Duldur', 'Qiziltepa', 'Armijon']
+            ovoz = input('>>> ')
+            if ovoz in qishloq:
+                print("Saqlandi ")
+                self.data[pasport]['ovoz'] = ovoz
+                with open('data_file.json', 'w') as json_file:
+                    json.dump(self.data, json_file, indent=4)
+                print("Malumotlar JSON formatida saqlandi.")
             else:
-                qishloq = ['Mitan','Arabsaroy','Qalqon Ota','Vomitan','Duldur','Qiziltepa','Armijon']
-                print('--Qaysi qishloqqa ovoz berasiz?--')
-                ovoz = input('>>> ')
+                print('Ovozni xato berdingiz')
 
-                if ovoz in len(qishloq):
-                    print("Saqlandi ")
-                    self.data.update({'ovoz':ovoz})
-                    json_file_name = 'data_file.json'
-                    with open(json_file_name,'w') as json_f:
-                        json.dump(malumot,json_f,indent=7)
-                    print(f"json formatga saqlandi {json_f}")
-                else:
-                    print('Ovozni xato berdingiz')
-        if __name__ == '__main__':
-            
+if __name__ == '__main__':
+    budget = OpenBudget()
+    budget.main()
